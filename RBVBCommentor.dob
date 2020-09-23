@@ -1,0 +1,828 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Begin VB.UserDocument docProcAndFunc 
+   ClientHeight    =   2625
+   ClientLeft      =   4110
+   ClientTop       =   3195
+   ClientWidth     =   2700
+   HScrollSmallChange=   225
+   KeyPreview      =   -1  'True
+   ScaleHeight     =   2625
+   ScaleWidth      =   2700
+   ScrollBars      =   0  'None
+   Tag             =   "10"
+   VScrollSmallChange=   225
+   Begin MSComctlLib.ImageList ImageList 
+      Left            =   2070
+      Top             =   405
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   16
+      ImageHeight     =   16
+      MaskColor       =   16711935
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   11
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":0000
+            Key             =   "proc"
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":038A
+            Key             =   "func"
+         EndProperty
+         BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":0714
+            Key             =   "refresh"
+         EndProperty
+         BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":0AAE
+            Key             =   "user"
+         EndProperty
+         BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":0E4B
+            Key             =   "comment"
+         EndProperty
+         BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":0EE3
+            Key             =   "bug"
+         EndProperty
+         BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":12BE
+            Key             =   "remark"
+         EndProperty
+         BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":1347
+            Key             =   "about"
+         EndProperty
+         BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":16D8
+            Key             =   "propget"
+         EndProperty
+         BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":1A63
+            Key             =   "proplet"
+         EndProperty
+         BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "RBVBCommentor.dox":1DEE
+            Key             =   "propset"
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.Toolbar Toolbar 
+      Align           =   1  'Align Top
+      Height          =   420
+      Left            =   0
+      TabIndex        =   1
+      Top             =   0
+      Width           =   2700
+      _ExtentX        =   4763
+      _ExtentY        =   741
+      ButtonWidth     =   609
+      ButtonHeight    =   582
+      AllowCustomize  =   0   'False
+      Wrappable       =   0   'False
+      Appearance      =   1
+      ImageList       =   "ImageList"
+      _Version        =   393216
+      BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
+         NumButtons      =   8
+         BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "btnRefresh"
+            Object.ToolTipText     =   "Refresh Code List"
+            ImageIndex      =   3
+         EndProperty
+         BeginProperty Button2 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "btnSettings"
+            Object.ToolTipText     =   "User Settings"
+            ImageIndex      =   4
+         EndProperty
+         BeginProperty Button3 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "btnInsert"
+            Object.ToolTipText     =   "Insert Comment Block"
+            ImageIndex      =   5
+         EndProperty
+         BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "btnRemark"
+            Object.ToolTipText     =   "Insert Single Comment Line"
+            ImageIndex      =   7
+         EndProperty
+         BeginProperty Button6 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "btnBugFix"
+            Object.ToolTipText     =   "Insert Single Bug-Fix Line"
+            ImageIndex      =   6
+         EndProperty
+         BeginProperty Button7 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   4
+            Object.Width           =   1e-4
+         EndProperty
+         BeginProperty Button8 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "btnAbout"
+            Object.ToolTipText     =   "About"
+            ImageIndex      =   8
+         EndProperty
+      EndProperty
+      BorderStyle     =   1
+   End
+   Begin TabDlg.SSTab SSTab 
+      Height          =   2175
+      Left            =   0
+      TabIndex        =   0
+      Top             =   420
+      Width           =   2655
+      _ExtentX        =   4683
+      _ExtentY        =   3836
+      _Version        =   393216
+      Style           =   1
+      Tabs            =   2
+      TabsPerRow      =   2
+      TabHeight       =   420
+      TabCaption(0)   =   "Code"
+      TabPicture(0)   =   "RBVBCommentor.dox":2178
+      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).Control(0)=   "ListView"
+      Tab(0).Control(0).Enabled=   0   'False
+      Tab(0).ControlCount=   1
+      TabCaption(1)   =   "Settings"
+      TabPicture(1)   =   "RBVBCommentor.dox":2194
+      Tab(1).ControlEnabled=   0   'False
+      Tab(1).Control(0)=   "TreeViewSettings"
+      Tab(1).ControlCount=   1
+      Begin MSComctlLib.ListView ListView 
+         Height          =   1815
+         Left            =   30
+         TabIndex        =   3
+         TabStop         =   0   'False
+         Top             =   300
+         Width           =   2580
+         _ExtentX        =   4551
+         _ExtentY        =   3201
+         View            =   3
+         Arrange         =   2
+         LabelEdit       =   1
+         LabelWrap       =   0   'False
+         HideSelection   =   -1  'True
+         HideColumnHeaders=   -1  'True
+         PictureAlignment=   5
+         TextBackground  =   -1  'True
+         _Version        =   393217
+         SmallIcons      =   "ImageList"
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   1
+         NumItems        =   1
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Text            =   "procfunc"
+            Object.Width           =   17639
+         EndProperty
+      End
+      Begin MSComctlLib.TreeView TreeViewSettings 
+         Height          =   1815
+         Left            =   -74970
+         TabIndex        =   2
+         TabStop         =   0   'False
+         Top             =   300
+         Width           =   2580
+         _ExtentX        =   4551
+         _ExtentY        =   3201
+         _Version        =   393217
+         LabelEdit       =   1
+         LineStyle       =   1
+         Checkboxes      =   -1  'True
+         ImageList       =   "ImageList"
+         BorderStyle     =   1
+         Appearance      =   1
+      End
+   End
+End
+Attribute VB_Name = "docProcAndFunc"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Enum imgListView
+    imgProcedure = 1
+    imgFunction = 2
+    imgPropGet = 9
+    imgPropLet = 10
+    imgPropSet = 11
+End Enum
+
+Dim mcmpCurrentForm     As VBComponent      'current form
+
+'I've still got the problem to place the cursor behind or under the inserted comment
+Private Sub SetIDEWindowFocus(myWindow As String)
+    Dim i As Integer
+
+    For i = 1 To gVBInstance.Windows.Count
+        If gVBInstance.Windows(i).Caption = myWindow Then
+            gVBInstance.Windows(i).SetFocus
+            Exit For
+        End If
+    Next
+
+End Sub
+
+Private Sub TreeViewSettings_NodeClick(ByVal Node As MSComctlLib.Node)
+On Error Resume Next
+
+    If gVBInstance.ActiveCodePane Is Nothing Then
+        RefreshList
+        Exit Sub
+    End If
+
+    If TreeViewSettings.SelectedItem.Text > "" Then
+    
+        'Toggle Node checkbox true or false
+        Node.Checked = IIf(Node.Checked = True, False, True)
+        'Save setting to registery
+        SaveSetting APP_CATEGORY, App.Title, Node.Key, Str(Node.Checked)
+
+        If Node.Key = "useSorted" Then
+            ComOpt.useSorted = Node.Checked
+        ElseIf Node.Key = "useOrganisation" Then
+            ComOpt.useOrganisation = Node.Checked
+        ElseIf Node.Key = "useDateTime" Then
+            ComOpt.useDateTime = Node.Checked
+        ElseIf Node.Key = "useParameters" Then
+            ComOpt.useParameters = Node.Checked
+        ElseIf Node.Key = "useStarOrMin" Then
+            ComOpt.useStarOrMin = Node.Checked
+        End If
+    End If
+
+End Sub
+
+Private Sub Toolbar_ButtonClick(ByVal Button As MSComctlLib.Button)
+On Error Resume Next
+
+    If Button.Key = "btnSettings" Then frmSettings.Show
+    If Button.Key = "btnAbout" Then frmAbout.Show
+
+    If gVBInstance.ActiveCodePane Is Nothing Then
+        RefreshList
+        Exit Sub
+    End If
+        
+    Select Case Button.Key
+                
+        Case "btnRefresh"
+            RefreshList
+           
+        Case "btnInsert"
+            InsertCommentText
+            
+        Case "btnRemark"
+            InsertRemark
+            
+        Case "btnBugFix"
+            InsertBugFix
+        
+    End Select
+    
+End Sub
+
+Private Sub ListView_DblClick()
+On Error Resume Next
+
+    If gVBInstance.ActiveCodePane Is Nothing Then
+        RefreshList
+        Exit Sub
+    End If
+    
+    If ListView.SelectedItem.Text > "" Then
+        Dim sLine As Long, sCol As Long, eLine As Long, eCol As Long
+        Dim RetVal As Boolean
+        
+        sLine = 1
+        sCol = 1
+        eLine = -1
+        eCol = -1
+        
+        'check to see if we have a valid code-module
+        If gVBInstance.ActiveCodePane Is Nothing Then Exit Sub
+
+        gVBInstance.ActiveCodePane.Show
+        RetVal = gVBInstance.ActiveCodePane.CodeModule.Find(ListView.SelectedItem.Text, sLine, sCol, eLine, eCol, True, True)
+        
+        'If found, jump to procedure or function
+        If RetVal = True Then
+            gVBInstance.ActiveCodePane.TopLine = sLine
+            
+            'Set cursor after remark
+            gVBInstance.ActiveCodePane.SetSelection sLine, 0, sLine, 0
+'            gVBInstance.Windows(myActiveCodepane).SetFocus
+        Else
+            MsgBox "Code does not longer exist!" & vbCrLf & "The code list shall be refreshed.", vbOKOnly + vbInformation, "Info"
+            RefreshList
+        End If
+    End If
+End Sub
+
+Private Sub UserDocument_Resize()
+    SSTab.Width = ScaleWidth - 15
+    SSTab.Height = ScaleHeight - (Toolbar.Height + 40)
+    
+    ListView.Width = SSTab.Width - 70
+    ListView.Height = SSTab.Height - Toolbar.Height
+    
+    TreeViewSettings.Width = SSTab.Width - 70
+    TreeViewSettings.Height = SSTab.Height - Toolbar.Height
+
+End Sub
+
+'======================================================
+'this sub rebuilds the list from the form's controls
+'======================================================
+Public Sub RefreshList()
+On Error GoTo RefreshListErr
+    Dim FirstLineNumber As Long
+    Dim ProcOrFuncTextLine As String
+    Dim i As Integer
+    
+    'Clear the treeview
+    ListView.ListItems.Clear
+    
+    If ComOpt.useSorted = True Then
+        ListView.Sorted = True
+    Else
+        ListView.Sorted = False
+    End If
+    
+    'add all procedures and functions to listbox
+    For i = 1 To gVBInstance.ActiveCodePane.CodeModule.Members.Count
+
+        If (gVBInstance.ActiveCodePane.CodeModule.Members.Item(i).Type = vbext_mt_Method) Or (gVBInstance.ActiveCodePane.CodeModule.Members.Item(i).Type = vbext_mt_Property) Then
+
+            'Procedure or Function
+            If (gVBInstance.ActiveCodePane.CodeModule.Members.Item(i).Type = vbext_mt_Method) Then
+            
+                'Get first line position
+                FirstLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcBodyLine(gVBInstance.ActiveCodePane.CodeModule.Members.Item(i).Name, vbext_pk_Proc)
+                'Get procedure or function name
+                ProcOrFuncTextLine = gVBInstance.ActiveCodePane.CodeModule.Lines(FirstLineNumber, 1)
+            
+                If (ProcOrFuncTextLine <> "Option Explicit") And (Left(ProcOrFuncTextLine, 11) <> "Option Base") And (Trim(ProcOrFuncTextLine) <> "") Then
+                
+                    'add node to the treeview
+                    If InStr(1, ProcOrFuncTextLine, "Sub ", vbBinaryCompare) > 0 Then
+                        ListView.ListItems.Add , , ProcOrFuncTextLine, , imgListView.imgProcedure
+                    ElseIf InStr(1, ProcOrFuncTextLine, "Function ", vbBinaryCompare) > 0 Then
+                        ListView.ListItems.Add , , ProcOrFuncTextLine, , imgListView.imgFunction
+                    End If
+                
+                End If
+            'Property
+            ElseIf (gVBInstance.ActiveCodePane.CodeModule.Members.Item(i).Type = vbext_mt_Property) Then
+            
+                
+On Error Resume Next
+                
+                'Get first line position from GET Property
+                FirstLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcBodyLine(gVBInstance.ActiveCodePane.CodeModule.Members.Item(i).Name, vbext_pk_Get)
+                If Err.Number = 0 Then
+                    'Get property name
+                    ProcOrFuncTextLine = gVBInstance.ActiveCodePane.CodeModule.Lines(FirstLineNumber, 1)
+                    
+                    ListView.ListItems.Add , , ProcOrFuncTextLine, , imgListView.imgPropGet
+                End If
+                Err.Clear
+                
+                'Get first line position from LET Property
+                FirstLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcBodyLine(gVBInstance.ActiveCodePane.CodeModule.Members.Item(i).Name, vbext_pk_Let)
+                If Err.Number = 0 Then
+                    'Get property name
+                    ProcOrFuncTextLine = gVBInstance.ActiveCodePane.CodeModule.Lines(FirstLineNumber, 1)
+                
+                    ListView.ListItems.Add , , ProcOrFuncTextLine, , imgListView.imgPropLet
+                End If
+                Err.Clear
+                
+                'Get first line position from SET Property
+                FirstLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcBodyLine(gVBInstance.ActiveCodePane.CodeModule.Members.Item(i).Name, vbext_pk_Set)
+                If Err.Number = 0 Then
+                    'Get property name
+                    ProcOrFuncTextLine = gVBInstance.ActiveCodePane.CodeModule.Lines(FirstLineNumber, 1)
+                    
+                    ListView.ListItems.Add , , ProcOrFuncTextLine, , imgListView.imgPropSet
+                End If
+                Err.Clear
+                
+On Error GoTo RefreshListErr
+
+            End If
+        End If
+    Next
+    ListView.Refresh
+    
+    If ListView.ListItems.Count > 0 Then
+        Set ListView.SelectedItem = ListView.ListItems(1)
+    End If
+    Exit Sub
+    
+RefreshListErr:
+    Select Case Err
+        
+        Case 91     'Object variable or With block variable not set
+            Resume Next
+        Case Else 'Unrecoverable error
+            MsgBox "RefreshList:" & vbCrLf & Err & ": " & Err.Description
+    End Select
+    Err.Clear
+
+End Sub
+
+Private Sub UserDocument_KeyDown(KeyCode As Integer, Shift As Integer)
+    'pass the keystrokes onto the IDE
+    HandleKeyDown Me, KeyCode, Shift
+End Sub
+
+Private Sub UserDocument_Show()
+    Dim RetVal As Boolean
+    Dim myNode As Node
+
+    TreeViewSettings.Nodes.Clear
+    Set myNode = TreeViewSettings.Nodes.Add(, , "useSorted", "Sorted Code list")
+    GetUserSettings myNode
+    
+    Set myNode = TreeViewSettings.Nodes.Add(, , "useDateTime", "Type Created Date/Time in Comment")
+    GetUserSettings myNode
+    
+    Set myNode = TreeViewSettings.Nodes.Add(, , "useOrganisation", "Type Organisation in Comment")
+    GetUserSettings myNode
+    
+    Set myNode = TreeViewSettings.Nodes.Add(, , "useParameters", "Type Parameters in Comment")
+    GetUserSettings myNode
+    
+    Set myNode = TreeViewSettings.Nodes.Add(, , "useStarOrMin", "When Checked use " & Chr(34) & "*" & Chr(34) & " otherwise use " & Chr(34) & "-" & Chr(34) & " in Comment")
+    GetUserSettings myNode
+    
+   
+    'Fill typerecord
+    ComOpt.Organisation = GetSetting(APP_CATEGORY, App.Title, "Organisation", "Organisation Name")
+    ComOpt.UserName = GetSetting(APP_CATEGORY, App.Title, "UserName", "User Name")
+    ComOpt.Initials = GetSetting(APP_CATEGORY, App.Title, "Initials", "Initials")
+    ComOpt.ComPrefix = GetSetting(APP_CATEGORY, App.Title, "ComPrefix", "ŒŒŒ~~~")
+    ComOpt.useSorted = CBool(GetSetting(APP_CATEGORY, App.Title, "useSorted", Str(False)))
+    ComOpt.useOrganisation = CBool(GetSetting(APP_CATEGORY, App.Title, "useOrganisation", Str(False)))
+    ComOpt.useStarOrMin = CBool(GetSetting(APP_CATEGORY, App.Title, "useStarOrMin", Str(False)))
+    
+    RefreshList
+    
+End Sub
+
+Private Sub GetUserSettings(myNode As Node)
+
+    If GetSetting(APP_CATEGORY, App.Title, myNode.Key, Str(False)) = Str(True) Then
+        myNode.Checked = True
+    Else
+        myNode.Checked = False
+    End If
+
+    If myNode.Key = "useSorted" Then
+        ComOpt.useSorted = myNode.Checked
+    ElseIf myNode.Key = "useDateTime" Then
+        ComOpt.useDateTime = myNode.Checked
+    ElseIf myNode.Key = "useParameters" Then
+        ComOpt.useParameters = myNode.Checked
+    End If
+    
+End Sub
+
+Private Sub InsertCommentText()
+On Error GoTo Err_Handler
+    Dim m As Long, n As Long, x As Long, y As Long, StartLineNumber As Long, FirstLineNumber As Long
+    Dim LineCount As Long
+    Dim ProcOrFuncName As String, ProcOrFuncType As String, ProcOrFuncTextLine As String
+    Dim myCommentChar As String * 1, myGetLetSet As String, myCaption As String
+
+    Dim i As Byte
+    Dim myFound As Boolean
+    
+    'Get Current Linenumber
+    gVBInstance.ActiveCodePane.GetSelection m, n, x, y
+
+
+    'Store active window
+    myCaption = gVBInstance.ActiveCodePane.Window.Caption
+
+On Error Resume Next
+
+    If m <= gVBInstance.ActiveCodePane.CodeModule.CountOfDeclarationLines Then Exit Sub
+
+    'Check to see if it is a procedure or Function
+    ProcOrFuncName = ""
+    ProcOrFuncName = gVBInstance.ActiveCodePane.CodeModule.ProcOfLine(m, vbext_pk_Proc)
+    
+    
+    'Check to see if it is a procedure or Function
+    'Get first and startline positions
+    StartLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcStartLine(ProcOrFuncName, vbext_pk_Proc)
+    If Err = 0 Then
+        FirstLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcBodyLine(ProcOrFuncName, vbext_pk_Proc)
+        GoTo Skip
+    End If
+    Err = 0
+        
+    'Check to see if proc = Let Property
+    StartLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcStartLine(ProcOrFuncName, vbext_pk_Let)
+    LineCount = gVBInstance.ActiveCodePane.CodeModule.ProcCountLines(ProcOrFuncName, vbext_pk_Let)
+    myFound = False
+    For i = StartLineNumber To StartLineNumber + LineCount + 1
+        If m = i Then
+            myFound = True
+            Exit For
+        End If
+    Next
+    
+    'Check to see if proc = Get Property
+    If myFound = False Then
+    
+        StartLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcStartLine(ProcOrFuncName, vbext_pk_Get)
+        LineCount = gVBInstance.ActiveCodePane.CodeModule.ProcCountLines(ProcOrFuncName, vbext_pk_Get)
+        
+        For i = StartLineNumber To StartLineNumber + LineCount + 1
+            If m = i Then
+                myFound = True
+                Exit For
+            End If
+        Next
+        
+        'Get first and startline positions
+        StartLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcStartLine(ProcOrFuncName, vbext_pk_Get)
+        If Err = 0 Then
+            FirstLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcBodyLine(ProcOrFuncName, vbext_pk_Get)
+            
+            If InStr(1, gVBInstance.ActiveCodePane.CodeModule.Lines(FirstLineNumber, 1), "Get ", vbBinaryCompare) > 0 Then
+                myGetLetSet = "Get"
+                GoTo Skip
+            End If
+        End If
+        Err = 0
+    Else
+
+        'Get first and startline positions
+        StartLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcStartLine(ProcOrFuncName, vbext_pk_Let)
+        If Err = 0 Then
+            FirstLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcBodyLine(ProcOrFuncName, vbext_pk_Let)
+            
+            If InStr(1, gVBInstance.ActiveCodePane.CodeModule.Lines(FirstLineNumber, 1), "Let ", vbBinaryCompare) > 0 Then
+                myGetLetSet = "Let"
+                GoTo Skip
+            End If
+        End If
+        Err = 0
+    End If
+        
+    'Check to see if proc = Set Property
+    'Get first and startline positions
+    StartLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcStartLine(ProcOrFuncName, vbext_pk_Set)
+    If Err = 0 Then
+        FirstLineNumber = gVBInstance.ActiveCodePane.CodeModule.ProcBodyLine(ProcOrFuncName, vbext_pk_Set)
+        myGetLetSet = "Set"
+        GoTo Skip
+    End If
+    Err = 0
+        
+Skip:
+On Error GoTo Err_Handler
+
+    'Check to see if we are in the decleration section
+    'if no procedure, function or property, leave this procedure
+    If ProcOrFuncName = "" Then Exit Sub
+    
+    'Get procedure or function name
+    ProcOrFuncTextLine = gVBInstance.ActiveCodePane.CodeModule.Lines(FirstLineNumber, 1)
+    
+    'Find out if this is a procedure or function
+    ProcOrFuncType = Empty
+    If InStr(1, ProcOrFuncTextLine, "Sub ", vbBinaryCompare) > 0 Then
+        ProcOrFuncType = "Procedure   : "
+    ElseIf InStr(1, ProcOrFuncTextLine, "Function ", vbBinaryCompare) > 0 Then
+        ProcOrFuncType = "Function    : "
+    ElseIf InStr(1, ProcOrFuncTextLine, "Property ", vbBinaryCompare) > 0 Then
+        ProcOrFuncType = "Property " & myGetLetSet & ": "
+    End If
+    
+    'if startline is equal to firstline then first insert a blank line
+    If StartLineNumber = FirstLineNumber Then
+        gVBInstance.ActiveCodePane.CodeModule.InsertLines StartLineNumber, ""
+    End If
+    
+    If ComOpt.useStarOrMin = True Then
+        myCommentChar = "*"
+    Else
+        myCommentChar = "-"
+    End If
+    'Type string to codewindow
+    gVBInstance.ActiveCodePane.CodeModule.InsertLines StartLineNumber + 1, "'" & ReplSTR(70, myCommentChar)
+    gVBInstance.ActiveCodePane.CodeModule.InsertLines StartLineNumber + 2, "'" & ProcOrFuncType & ProcOrFuncName & "()"
+    
+    'Type Created Dat/Time
+    i = 3
+    If ComOpt.useDateTime = True Then
+        gVBInstance.ActiveCodePane.CodeModule.InsertLines StartLineNumber + i, "'Created     : " & Now()
+        i = i + 1
+    End If
+    gVBInstance.ActiveCodePane.CodeModule.InsertLines StartLineNumber + i, "'" & ReplSTR(70, myCommentChar)
+    i = i + 1
+    
+    'Type author
+    gVBInstance.ActiveCodePane.CodeModule.InsertLines StartLineNumber + i, "'Author      : " & ComOpt.UserName
+    i = i + 1
+    
+    'Type organisation
+    If ComOpt.useOrganisation = True Then
+        gVBInstance.ActiveCodePane.CodeModule.InsertLines StartLineNumber + i, "'Organisation: " & ComOpt.Organisation
+        i = i + 1
+    End If
+    gVBInstance.ActiveCodePane.CodeModule.InsertLines StartLineNumber + i, "'" & ReplSTR(70, myCommentChar)
+    i = i + 1
+    
+    'Type parameters
+    If ComOpt.useParameters = True Then
+        i = MakeParamList(ProcOrFuncTextLine, StartLineNumber + i, myCommentChar) + i
+    End If
+    
+    'Restore active window
+    SetIDEWindowFocus myCaption
+
+    
+Exit Sub
+    
+Err_Handler:
+    
+    Select Case Err
+        
+        Case Else 'Unrecoverable error
+            MsgBox "RefreshList:" & vbCrLf & Err & ": " & Err.Description
+            Resume Next
+    End Select
+    Err.Clear
+
+End Sub
+
+Private Sub InsertRemark()
+On Error Resume Next
+    Dim sLine As Long, sCol As Long, eLine As Long, eCol As Long
+    Dim myChar As String * 1
+    Dim myRow As String
+    Dim myCaption As String
+    
+    'Get Current Linenumber
+    gVBInstance.ActiveCodePane.GetSelection sLine, sCol, eLine, eCol
+    
+    'Store active window
+    myCaption = gVBInstance.ActiveCodePane.Window.Caption
+    
+    'Find out spaces before comment
+    sCol = 0
+    myChar = " "
+    myRow = gVBInstance.ActiveCodePane.CodeModule.Lines(sLine, 1)
+    While myChar = " "
+        sCol = sCol + 1
+        myChar = Mid(myRow, sCol, 1)
+    Wend
+    'Type remark
+    gVBInstance.ActiveCodePane.CodeModule.InsertLines sLine, ReplSTR(sCol - 1, " ") & "'" & Trim(ComOpt.ComPrefix)
+    
+    'Set cursor after remark
+    gVBInstance.ActiveCodePane.SetSelection sLine, sCol + 1, sLine, sCol + 1
+    
+    'Restore active window
+    SetIDEWindowFocus myCaption
+    
+End Sub
+
+Private Sub InsertBugFix()
+On Error Resume Next
+    Dim sLine As Long, sCol As Long, eLine As Long, eCol As Long
+    Dim myChar As String * 1
+    Dim myRow As String
+    Dim myCaption As String
+    Dim lenBugFix As Byte
+    
+    'Get Current Linenumber
+    gVBInstance.ActiveCodePane.GetSelection sLine, sCol, eLine, eCol
+    
+    'Store active window
+    myCaption = gVBInstance.ActiveCodePane.Window.Caption
+    
+    'Find out spaces before comment
+    sCol = 0
+    myChar = " "
+    myRow = gVBInstance.ActiveCodePane.CodeModule.Lines(sLine, 1)
+    While myChar = " "
+        sCol = sCol + 1
+        myChar = Mid(myRow, sCol, 1)
+    Wend
+    
+    'Type bugfix line
+    gVBInstance.ActiveCodePane.CodeModule.InsertLines sLine, ReplSTR(sCol - 1, " ") & "'" & Trim(ComOpt.ComPrefix) & "BUGFIX, " & ComOpt.Initials & ": "
+
+    'Set cursor after remark
+    lenBugFix = Len(ReplSTR(sCol - 1, " ") & "'" & Trim(ComOpt.ComPrefix) & "BUGFIX, " & ComOpt.Initials & ": ")
+    gVBInstance.ActiveCodePane.SetSelection sLine, lenBugFix, sLine, lenBugFix
+    
+    'Restore active window
+    SetIDEWindowFocus myCaption
+End Sub
+
+Private Function MakeParamList(myProcOrFuncTextLine As String, myStartLineNumber As Long, myCommentChar As String) As Byte
+On Error GoTo Err_MakeParamList
+    Dim myBeginStr As Integer, myEndStr As Integer
+    Dim myParams As String, stmp As String
+    Dim P As Integer, r As Integer, q As Integer
+    Dim i As Byte, y As Byte
+
+    myBeginStr = InStr(1, myProcOrFuncTextLine, "(", vbBinaryCompare) + 1
+    myEndStr = InStrRev(myProcOrFuncTextLine, ")", , vbBinaryCompare)
+
+    myParams = Mid(myProcOrFuncTextLine, myBeginStr, myEndStr - myBeginStr)
+
+    stmp = myParams
+    P = 1
+    q = 1
+    i = 1
+    y = 0
+    While P > 0
+        P = InStr(P + 1, myParams, ",")
+        If P > 0 Then
+            stmp = Mid(myParams, q, P - q)
+            q = P + 2
+            gVBInstance.ActiveCodePane.CodeModule.InsertLines myStartLineNumber + y, "'Parameter" & FillSpace(Str(i), 3, "R") & ": " & stmp
+            y = y + 1
+        Else
+            If Len(myParams) > 0 Then
+                stmp = Mid(myParams, q, Len(myParams))
+                gVBInstance.ActiveCodePane.CodeModule.InsertLines myStartLineNumber + y, "'Parameter" & FillSpace(Str(i), 3, "R") & ": " & stmp
+                y = y + 1
+            End If
+        End If
+        i = i + 1
+    Wend
+    
+Search4Result:
+
+    P = Len(myProcOrFuncTextLine) - myEndStr - 1
+    If P <> -1 Then
+        gVBInstance.ActiveCodePane.CodeModule.InsertLines myStartLineNumber + y, "'Result      : " & Right(myProcOrFuncTextLine, P)
+        y = y + 1
+    End If
+    
+    gVBInstance.ActiveCodePane.CodeModule.InsertLines myStartLineNumber + y, "'" & ReplSTR(70, myCommentChar)
+    y = y + 1
+    
+    MakeParamList = y
+    Exit Function
+
+Err_MakeParamList:
+    
+    Select Case Err
+        
+        Case 5 'No parameters found
+            GoTo Search4Result
+            
+        Case Else 'Unrecoverable error
+            MsgBox "MakeParamList:" & vbCrLf & Err & ": " & Err.Description
+            Exit Function
+    End Select
+    Err.Clear
+
+End Function
+
+Private Function FillSpace(myTekst As String, myLenght As Byte, myPos As String) As String
+    Dim myRest As Integer
+    
+    If Len(myTekst) > myLenght Then
+        myRest = Len(myTekst) - myLenght
+    Else
+        myRest = 0
+    End If
+    
+    If myPos = "L" Then
+        FillSpace = Space(myLenght - (Len(myTekst) - myRest)) & myTekst
+    Else
+        FillSpace = myTekst & Space(myLenght - (Len(myTekst) - myRest))
+    End If
+End Function
+
+Private Function ReplSTR(bAantal As Long, strTeken As String) As String
+    Dim i As Byte
+    Dim strTemp As String
+    
+    strTemp = ""
+    For i = 1 To bAantal
+        strTemp = strTemp & strTeken
+    Next i
+    
+    ReplSTR = strTemp
+End Function
